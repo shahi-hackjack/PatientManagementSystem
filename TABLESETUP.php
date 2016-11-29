@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username   = "root";
+$password   = "";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password);
@@ -19,10 +19,10 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating database: " . $conn->error;
 }
-$conn = mysqli_connect($servername, $username, $password,'patientdir');
+$conn = mysqli_connect($servername, $username, $password, 'patientdir');
 
 
-$sql="CREATE TABLE patient (
+$sql = "CREATE TABLE patient (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Fname VARCHAR(30) NOT NULL,
 Lname VARCHAR(30) NOT NULL,
@@ -33,21 +33,10 @@ Phone VARCHAR(10),
 Comment VARCHAR(2000)
 )";
 
-if($conn->query($sql)=== TRUE)
-{
-echo "TABLE CREATED successfully";
-
+if ($conn->query($sql) === TRUE) {
+    echo "TABLE CREATED successfully";
+    
+} else {
+    echo "Error creating table: " . $conn->error;
 }
-else{
-	echo "Error creating table: " . $conn->error;
-}
-
-
-
-
-
-
-
-
-
 ?>
