@@ -1,11 +1,7 @@
 <?php
-
 require_once 'config.php';
 
-
-
 $sql="select id,Fname,Lname from patient"; 
-
 $data = array();
 $result=mysqli_query($conn,$sql);
 
@@ -17,7 +13,4 @@ if(mysqli_num_rows($result) > 0){
 	echo json_encode ("0 results");
 }
 echo json_encode($data);
-
-
-
 ?>
